@@ -40,4 +40,6 @@ const config = {
   },
 };
 
+config.transformer.unstable_allowRequireContext = true;
+
 module.exports = config;
