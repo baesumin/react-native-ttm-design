@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { multiply } from 'react-native-ttm-design';
 
-export default function App() {
+function App() {
   const [result, setResult] = useState<number | undefined>();
 
   useEffect(() => {
@@ -15,6 +15,14 @@ export default function App() {
     </View>
   );
 }
+
+let AppEntryPoint = App;
+
+if (process.env.STORYBOOK_ENABLED) {
+  AppEntryPoint = require('../../.ondevice').default;
+}
+
+export default AppEntryPoint;
 
 const styles = StyleSheet.create({
   container: {

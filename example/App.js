@@ -1,2 +1,1 @@
-// export { default } from './src/App';
-export { default } from './../.storybook';
+export { default } from './src/App';

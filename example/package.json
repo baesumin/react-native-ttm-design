@@ -6,7 +6,10 @@
     "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "storybook:start": "NODE_TLS_REJECT_UNAUTHORIZED=0 STORYBOOK_ENABLED=true expo start",
+    "storybook:ios": "STORYBOOK_ENABLED=true expo start --ios",
+    "storybook:android": "STORYBOOK_ENABLED=true expo start --android"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
