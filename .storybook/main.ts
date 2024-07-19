@@ -16,7 +16,28 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
-    getAbsolutePath('@storybook/addon-react-native-web'),
+    {
+      name: '@storybook/addon-react-native-web',
+      options: {
+        modulesToTranspile: [
+          'react-native-reanimated',
+          'nativewind',
+          'react-native-css-interop',
+        ],
+        babelPresets: ['nativewind/babel'],
+        babelPresetReactOptions: { jsxImportSource: 'nativewind' },
+        babelPlugins: [
+          'react-native-reanimated/plugin',
+          [
+            '@babel/plugin-transform-react-jsx',
+            {
+              runtime: 'automatic',
+              importSource: 'nativewind',
+            },
+          ],
+        ],
+      },
+    },
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-webpack5'),

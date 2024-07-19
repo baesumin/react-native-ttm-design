@@ -169,7 +169,8 @@
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "lib/",
+    "storybook-static"
   ],
   "prettier": {
     "quoteProps": "consistent",
