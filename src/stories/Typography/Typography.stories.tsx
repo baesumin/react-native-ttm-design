@@ -2,9 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Typography } from '../../components';
 
 const TypographyMeta: Meta<typeof Typography> = {
-  title: 'Typography',
+  title: 'components/Typography',
   component: Typography,
   decorators: [(Story) => <Story />],
+  parameters: {
+    componentSubtitle: '모바일 화면에 쓰일 텍스트',
+  },
+  tags: ['autodocs'],
 };
 
 export default TypographyMeta;
@@ -16,7 +20,7 @@ export const Basic: StoryObj<typeof Typography> = {
   },
 };
 
-export const AllTypographt: StoryObj<typeof Typography> = {
+export const AllTypography: StoryObj<typeof Typography> = {
   argTypes: {
     variant: {
       control: {
@@ -26,6 +30,13 @@ export const AllTypographt: StoryObj<typeof Typography> = {
     text: {
       control: {
         disable: true,
+      },
+    },
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: null,
       },
     },
   },
