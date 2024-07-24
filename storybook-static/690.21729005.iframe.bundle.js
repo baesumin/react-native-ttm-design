@@ -1,1 +1,0 @@
-(self.webpackChunkreact_native_ttm_design=self.webpackChunkreact_native_ttm_design||[]).push([[690],{"./src/index.tsx":(__unused_webpack_module,exports)=>{Object.defineProperty(exports,"__esModule",{value:!0}),exports.multiply=function multiply(a,b){return Promise.resolve(a*b)}}}]);

@@ -1,18 +1,10 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Button, multiply } from 'react-native-ttm-design';
+import { StyleSheet, View } from 'react-native';
+import { Typography } from 'react-native-ttm-design';
 
 function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
-      <Button text="asdas" onPress={() => null} />
+      <Typography variant="SH" text={`Special Heading`} />
     </View>
   );
 }
@@ -28,12 +20,7 @@ export default AppEntryPoint;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    alignItems: 'center',
   },
 });

@@ -1,5 +1,2 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
-
-export { Button } from './components';
+export { Button, Typography } from './components';
+export { colors } from './constants';

@@ -180,7 +180,8 @@
   "eslintIgnore": [
     "node_modules/",
     "lib/",
-    "storybook-static"
+    "storybook-static",
+    "example/"
   ],
   "prettier": {
     "quoteProps": "consistent",
