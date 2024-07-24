@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-ttm-design';
+import { Button, multiply } from 'react-native-ttm-design';
 
 function App() {
   const [result, setResult] = useState<number | undefined>();
@@ -12,6 +12,7 @@ function App() {
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+      <Button text="asdas" onPress={() => null} />
     </View>
   );
 }

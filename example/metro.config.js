@@ -1,6 +1,7 @@
 const path = require('path');
 const escape = require('escape-string-regexp');
 const { getDefaultConfig } = require('@expo/metro-config');
+const { withNativeWind } = require('nativewind/metro');
 const exclusionList = require('metro-config/src/defaults/exclusionList');
 const pak = require('../package.json');
 
@@ -42,4 +43,4 @@ const config = {
 
 config.transformer.unstable_allowRequireContext = true;
 
-module.exports = config;
+module.exports = withNativeWind(config, { input: './global.css' });

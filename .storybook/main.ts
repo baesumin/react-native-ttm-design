@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
-import { join, dirname } from 'path';
+import { join, dirname, resolve } from 'path';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -17,7 +17,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
     {
-      name: '@storybook/addon-react-native-web',
+      name: getAbsolutePath('@storybook/addon-react-native-web'),
       options: {
         modulesToTranspile: [
           'react-native-reanimated',
@@ -42,6 +42,26 @@ const config: StorybookConfig = {
   framework: {
     name: getAbsolutePath('@storybook/react-webpack5'),
     options: {},
+  },
+  webpackFinal: async (config) => {
+    config.module?.rules?.push({
+      test: /\.css$/,
+      use: [
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: [require('tailwindcss'), require('autoprefixer')],
+            },
+          },
+        },
+      ],
+      include: [
+        resolve(__dirname, '../'), // path to project root
+      ],
+    });
+
+    return config;
   },
 };
 export default config;
